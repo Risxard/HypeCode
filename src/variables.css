@@ -1,0 +1,47 @@
+:root {
+    color: #ffffff;
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+
+    --nav-height: 90px;
+    --margin-column: 24px;
+
+    --paragraph-text-size: 16px;
+
+
+    --hype-color-01: #FE0000;
+    --hype-color-02: #005FFF;
+}
+
+
+
+@media screen and (min-width: 600px) {
+    #root {
+        --margin-column: 32px;
+    }
+}
+
+@media screen and (min-width: 880px) {
+    #root {
+        --margin-column: 44px;
+        /* --nav-height: 2.375rem; */
+    }
+
+}
+
+@media screen and (min-width: 1280px) {
+    #root {
+        --margin-column: 72px;
+        /* --nav-height: 3rem; */
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #root {}
+}
