@@ -1,29 +1,61 @@
 import "./AboutUs.css";
 
+import { Heart, Lightbulb, Star} from "lucide-react";
+
 function AboutUs() {
   return (
     <section className="AboutUs">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia excepturi
-        quasi laudantium omnis qui provident fugiat totam commodi dolorum.
-        Molestiae nobis consectetur deleniti fuga, repudiandae facere
-        dignissimos. Id, necessitatibus soluta ducimus tenetur aliquam, labore
-        sit doloribus in reiciendis beatae quaerat temporibus dolore maiores
-        accusamus quae. Repellendus autem vel vero quis perspiciatis optio
-        provident molestias sunt voluptas beatae dicta, molestiae assumenda
-        soluta natus at enim consectetur delectus temporibus officiis. Eveniet
-        fugiat optio voluptas ab placeat odio ex magni ullam repellendus
-        quisquam nisi voluptatum, amet quos, animi, natus vero porro tenetur!
-        Error blanditiis sit nobis facere doloribus at modi autem consequuntur
-        nesciunt. Commodi esse enim cumque delectus, accusamus corrupti
-        molestias tempore eum magnam repudiandae nisi velit recusandae
-        voluptate, sint totam corporis fugit nesciunt est illo quia! Quaerat,
-        tempora! Sunt dolore perspiciatis harum non nobis tempora cum quibusdam.
-        Voluptatibus, provident odio! Vero impedit quod commodi perspiciatis
-        iusto laudantium sunt alias doloribus quia, quaerat hic beatae
-        molestias, excepturi molestiae consequuntur ut fugit architecto tempora
-        ratione autem dolores nobis. Ducimus eum corrupti commodi expedita,
-      </p>
+      <div>
+        <h2>
+          About <strong>us</strong>
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+          dolore repellendus dolores! Provident, expedita nesciunt odit
+          blanditiis placeat dicta molestias voluptates modi, velit vero nisi
+          ab. Atque hic recusandae, quaerat, animi consequatur nostrum fuga eos
+          ea optio rem obcaecati aut?
+        </p>
+      </div>
+
+      <section className="cards-about-container">
+        <div className="card-about">
+        <Heart />
+
+          <div>
+            <h3>Passion</h3>
+
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime
+              ex, autem quod earum quasi vitae vero ducimus! Ex, ducimus harum.
+            </p>
+          </div>
+        </div>
+        <div className="card-about">
+        <Lightbulb />
+
+          <div>
+            <h3>Creativity</h3>
+
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime
+              ex, autem quod earum quasi vitae vero ducimus! Ex, ducimus harum.
+            </p>
+          </div>
+        </div>
+        <div className="card-about">
+        <Star />
+
+          <div>
+            <h3>Quality</h3>
+
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime
+              ex, autem quod earum quasi vitae vero ducimus! Ex, ducimus harum.
+            </p>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }

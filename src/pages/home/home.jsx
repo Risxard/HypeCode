@@ -8,26 +8,26 @@ import { useRef } from "react";
 
 import { scrollTo } from "../../functions/scrollTo/scrollTo";
 
-
+import BroCode from '../../Components/Svgs/BroCode'
 
 function Home() {
   const { t } = useTranslation();
 
-  const { heroH4, heroH1, heroP } = t("header");
+  const { heroH4, heroH1, heroP, heroBtn1, heroBtn2 } = t("header");
 
   const mainRef = useRef();
 
   const handleScrollTo = (ref) => {
+    console.log('hello!')
     if (ref.current) {
       scrollTo(ref.current);
     }
   };
 
-
   return (
-    <div className="home">
+    <div className="home" id="home">
       <header className="header-main">
-        <span className="background-tags"/>
+        <span className="background-tags" />
         <div className="info-header-container">
           <div>
             <p>
@@ -41,22 +41,22 @@ function Home() {
             <p>{heroP}</p>
           </article>
 
-          <button className="btn"></button>
+          <button className="btn" data-one={heroBtn1} data-two={heroBtn2}></button>
         </div>
 
         <div className="bro-code-container">
-          <img src={broCodes} alt="" />
+          <BroCode/>
         </div>
-        
+
         <div className="btn-down-container">
-          <span className="btn-to-down" onClick={(() => handleScrollTo(mainRef))}>
+          <span className="btn-to-down" onClick={() => handleScrollTo(mainRef)}>
             <DoubleArrowDown />
           </span>
         </div>
       </header>
 
-      <main id="toMain" ref={mainRef}>
-        <AboutUs/>
+      <main id="about" ref={mainRef}>
+        <AboutUs />
       </main>
     </div>
   );

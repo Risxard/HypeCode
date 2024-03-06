@@ -1,3 +1,100 @@
 .AboutUs{
     padding: 80px var(--margin-column);
+    background-color: white;
+    border-top: solid 2px rgba(60, 60, 60, 0.092);
+    color: black;
+}
+.AboutUs > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 48px;
+}
+
+
+
+
+
+.AboutUs > div > h2{
+    color: #131316;
+    font-size: 38px;
+    margin-bottom: 24px;
+}
+.AboutUs > div > h2 > strong{
+    color: #3B84FF;
+    font-size: 38px;
+}
+
+
+.AboutUs >div > p{
+    font-weight: 500;
+    color: #67708A;
+    max-width: 900px;
+}
+
+
+.cards-about-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 18px;
+    row-gap: 28px;
+}
+
+.card-about{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.card-about > div{
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+}
+
+.card-about > svg{
+    color: #3B84FF;
+    width: 64px;
+    height: 64px;
+
+    margin-right: 16px;
+    animation: entranceSvg .6s ease-in-out;
+
+
+
+}
+
+
+
+@keyframes entranceSvg {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.card-about > div > h3{
+    font-size: 24px;
+    color: #131316ca;
+    margin-bottom: 24px;
+}   
+.card-about > div > P{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    color: #67708A;
+    margin-bottom: 24px;
+}   
+
+
+@media screen and (max-width: 880px){
+    .cards-about-container{
+        flex-wrap: wrap;
+    }
 }

@@ -1,7 +1,19 @@
 {
+    "navigation": {
+        "home": "Home",
+        "aboutUs": "About us",
+        "ourServices": "Our services",
+        "contact": "Contact",
+        "languageSelector": {
+            "pt": "Portuguese",
+            "en": "English"
+        }
+    },
     "header": {
         "heroH4": "Your project <1>is here.</1>",
         "heroH1": "HypeCode is <2/>for you?",
-        "heroP": "Lorem ipsum dolor sit amet consectetur adipisicing"
+        "heroP": "Our work tells your digital story in a unique and genuine way.",
+        "heroBtn1" : "Let's get started?",
+        "heroBtn2" : "Lets's go!"
     }
 }

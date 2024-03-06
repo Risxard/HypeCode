@@ -2,7 +2,7 @@ nav {
     width: 100%;
     height: var(--nav-height);
 
-    
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -13,8 +13,15 @@ nav {
     padding-right: var(--margin-column);
     z-index: 99999;
 }
+nav.active{
+    position: fixed;
 
-.lucide-align-justify{
+}
+
+
+
+
+.lucide-align-justify {
     width: 38px;
     height: 38px;
     color: #131316;
@@ -39,6 +46,7 @@ nav>ul>li {
 
     transition: all 0.3s ease-in-out;
 }
+
 nav>ul>li:not(:last-child) {
     margin-right: 42px;
 }
@@ -46,19 +54,11 @@ nav>ul>li:not(:last-child) {
 
 
 
-nav>ul>li:last-child {
-
-    background: linear-gradient(to right, #FE0000, #c00101);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 
 
-    padding: 5px 8px;
-    border-radius: 10px;
-}
-
-nav>ul>li:hover {
+nav>ul>li:hover:not(:last-child) {
     transform: scale(1.25);
+    color: #3B84FF;
 }
 
 
@@ -77,17 +77,32 @@ nav>ul>li:hover {
 }
 
 
-.logo svg #Text path{
-    fill: #131316;
+
+
+.ham-menu{
+    display: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
+
+
+@media screen and (max-width: 880px) {
+    .ham-menu{
+        display: flex;
+    }
+}
+
+
 
 @media screen and (min-width: 880px) {
     nav>ul {
         display: flex;
     }
-    .lucide-align-justify{
+
+    .lucide-align-justify {
         display: none;
     }
+
 }
 
 
@@ -96,15 +111,17 @@ nav>ul>li:hover {
         max-width: 170px;
         height: auto;
     }
-    .logo svg #Text path{
+
+    .logo svg #Text path {
         fill: white;
     }
 
-    .lucide-align-justify{
+    .lucide-align-justify {
 
         color: white;
     }
 }
+
 @media screen and (max-width: 480px) {
     .logo svg {
         max-width: 150px;

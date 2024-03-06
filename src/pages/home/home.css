@@ -8,7 +8,7 @@
 
 
 
-.background-tags{
+.background-tags {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -18,6 +18,8 @@
   background-size: contain;
 
   margin-top: var(--nav-height);
+
+  z-index: 2;
 }
 
 
@@ -40,11 +42,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  -webkit-tap-highlight-color: transparent;
+
+  z-index: 10;
 }
-
-
-
-
 
 
 
@@ -53,8 +55,6 @@
   flex-direction: row;
   height: auto;
   color: #9f9fa3;
-
-
 }
 
 
@@ -64,15 +64,16 @@
   background-color: #131316;
   padding-top: var(--nav-height);
   position: relative;
+
 }
 
-.bro-code-container img {
+.bro-code-container svg {
   margin-left: -30px;
   width: 580px;
   height: auto;
   object-fit: contain;
   transition: all 3s ease-in-out;
-
+  z-index: 4;
 
   -webkit-animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   animation: slide-in-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -124,10 +125,13 @@
 
   padding-top: var(--nav-height);
 
+  z-index: 5;
+
 }
-.info-header-container> div{
+
+.info-header-container>div {
   z-index: 2;
-  
+
 }
 
 .info-header-container>div>p {
@@ -170,14 +174,13 @@
   margin-top: 62px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
-
   position: relative;
   background-color: transparent;
-  color: #e8e8e8;
+  color: white;
   font-size: 17px;
   font-weight: 600;
   border-radius: 10px;
-  width: 150px;
+  width: auto;
   height: 60px;
   border: none;
   text-transform: uppercase;
@@ -185,14 +188,15 @@
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
   transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+
 }
 
 .btn::before {
-  content: "Lets's go!";
+  content: attr(data-two);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: auto;
   height: 100%;
   pointer-events: none;
   background: linear-gradient(135deg, #FE0000, #005FFF);
@@ -201,20 +205,22 @@
   position: relative;
   transform-origin: bottom;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  padding: 0px 10px;
 }
 
 .btn::after {
-  content: "Let's do it?";
+  content: attr(data-one);
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #131316;
-  width: 100%;
+  width: auto;
   height: 100%;
   pointer-events: none;
   transform-origin: top;
   transform: translate(0%, -100%);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  padding: 0px 10px;
 }
 
 .btn:hover::before {
@@ -262,6 +268,17 @@
   }
 
 }
+@media screen and (min-width: 600px) {
+
+  .info-header-container>div>h1 {
+    font-size: 68px;
+
+  }
+
+}
+
+
+
 
 @media screen and (max-width: 600px) {
   .home>header {
@@ -289,37 +306,100 @@
 }
 
 @media screen and (min-width: 1080px) {
+  .info-header-container>div>h1 {
+    font-size: 60px;
+
+  }
+
+
   .bro-code-container {
     display: flex;
+
   }
 
   .info-header-container {
     width: 480px;
   }
 
-  .bro-code-container img {
+  .bro-code-container svg {
     margin-left: -30px;
-    width: 580px;
+    width: 100%;
   }
 
-  .home>header {
-    min-height: 800px;
+
+  .background-tags {
+    left: 500px;
+
   }
 }
 
 
 
 @media screen and (min-width: 1280px) {
-  .bro-code-container img {
+  .bro-code-container svg {
     margin-left: -30px;
-    width: 620px;
+    width: 100%;
   }
 
   .info-header-container {
-    min-width: 520px;
+    min-width: 580px;
     width: 40%;
   }
+
+  .info-header-container>div>h1 {
+    font-size: 68px;
+
+  }
 }
+
+
+
+@media screen and (min-width: 1400px) {
+  .bro-code-container svg {
+    margin-left: -30px;
+    width: 90%;
+  }
+
+  .info-header-container article{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .info-header-container>div>h1 {
+    font-size: 74px;
+
+  }
+  .info-header-container>div>p {
+    font-size: 32px;
+
+  }
+}
+
+
+@media screen and (min-width: 1600px) {
+  .bro-code-container svg {
+    margin-left: -30px;
+    width: 90%;
+  }
+
+  .info-header-container article{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .info-header-container>div>h1 {
+    font-size: 92px;
+
+  }
+  .info-header-container>div>p {
+    font-size: 38px;
+
+  }
+}
+
+
+
+
+
+
 
 
 .home>main {

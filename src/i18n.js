@@ -5,8 +5,8 @@ import translationEN from './locales/en/translation.json'
 import translationPT from './locales/pt/translation.json'
 
 i18n.use(LanguageDetector).use(initReactI18next).init({
-    debug: true,
-    fallbackLgn: "pt-BR",
+
+    fallbackLgn: "pt",
     returnObjects: true,
     resources: {
         pt: {

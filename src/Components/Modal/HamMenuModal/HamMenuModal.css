@@ -1,0 +1,151 @@
+.ham-menu-modal {
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+
+    background-color: var(--hype-background-color-one);
+
+    color: white;
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+.align-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ham-menu-modal>div {
+    top: 0;
+    position: absolute;
+    padding-inline: var(--margin-column);
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-ham-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-ham-menu>svg {
+    width: 38px;
+    height: 38px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.ham-menu-modal .logo>svg #Text path {
+    fill: white;
+}
+
+
+.ham-menu-modal ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ham-menu-modal ul li:not(:last-child) {
+    width: 100%;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 12px ;
+    font-size: 24px;
+}
+
+.ham-menu-modal ul li:hover:not(:last-child) {
+    cursor: pointer;
+    background-color: aliceblue;
+    color: black;
+}
+
+.ham-menu-modal .switch-language-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+
+}
+
+.switch-language {
+    width: 110px;
+    padding: 6px 6px;
+
+
+    border-radius: 180px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+
+
+
+.switch-language>span {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+
+    padding: 6px;
+    border-radius: 180px;
+
+    box-shadow: #000000 1px 20px 30px 1px;
+
+}
+
+.switch-language img {
+    width: 24px;
+    height: 24px;
+
+}
+
+.switch-language.en-US {
+    background-color: #044DC9;
+
+}
+
+.switch-language.pt-BR {
+    background-color: #43A047;
+}
+
+
+.switch-language.pt-BR>span {
+    transition: transform 0.3s ease-in 0.1s;
+    transform: translateX(0px);
+}
+
+.switch-language.en-US>span {
+    transition: transform 0.3s ease-in 0.1s;
+    transform: translateX(61px);
+
+}
