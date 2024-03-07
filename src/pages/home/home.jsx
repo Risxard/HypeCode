@@ -9,6 +9,7 @@ import { useRef } from "react";
 import { scrollTo } from "../../functions/scrollTo/scrollTo";
 
 import BroCode from '../../Components/Svgs/BroCode'
+import Portfolio from "../../Components/Portfolio/Portfolio";
 
 function Home() {
   const { t } = useTranslation();
@@ -37,27 +38,31 @@ function Home() {
               <Trans i18nKey={heroH1} components={{ 2: <br /> }} />
             </h1>
           </div>
-          <article>
-            <p>{heroP}</p>
-          </article>
+          <p>{heroP}</p>
 
-          <button className="btn" data-one={heroBtn1} data-two={heroBtn2}></button>
+
+          <button className="btn" role="button">{heroBtn1}</button>
+
+          <div className="btn-down-container">
+            <span className="btn-to-down" onClick={() => handleScrollTo(mainRef)}>
+              <DoubleArrowDown />
+            </span>
+          </div>
         </div>
 
         <div className="bro-code-container">
           <BroCode/>
         </div>
 
-        <div className="btn-down-container">
-          <span className="btn-to-down" onClick={() => handleScrollTo(mainRef)}>
-            <DoubleArrowDown />
-          </span>
-        </div>
+
       </header>
 
-      <main id="about" ref={mainRef}>
+      <main ref={mainRef}>
         <AboutUs />
+        <Portfolio/>
       </main>
+
+
     </div>
   );
 }

@@ -6,6 +6,9 @@
 
 }
 
+.header-main{
+  overflow: hidden;
+}
 
 
 .background-tags {
@@ -35,9 +38,8 @@
 
 .btn-down-container {
   position: absolute;
-  width: 100%;
   height: auto;
-  bottom: 20px;
+  bottom: 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -46,8 +48,10 @@
   -webkit-tap-highlight-color: transparent;
 
   z-index: 10;
-}
 
+  left: 0;
+  right: 0;
+}
 
 
 .landing-page>div {
@@ -94,26 +98,15 @@
   }
 }
 
-@keyframes slide-in-right {
-  0% {
-    -webkit-transform: translateX(80px);
-    transform: translateX(80px);
-    opacity: 0;
-  }
 
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
+
 
 
 .info-header-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
+  position: relative;
   justify-content: center;
   width: 800px;
   height: auto;
@@ -126,8 +119,28 @@
   padding-top: var(--nav-height);
 
   z-index: 5;
-
+  -webkit-animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  transition: opacity 5s ease-in-out;
 }
+
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-80px);
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
 
 .info-header-container>div {
   z-index: 2;
@@ -135,7 +148,7 @@
 }
 
 .info-header-container>div>p {
-  font-size: 24px;
+  font-size: var(--hype-typography-hero-p-fontsize);
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   font-style: bold;
@@ -154,133 +167,49 @@
 
 .info-header-container>div>h1 {
   font-family: "Poppins", sans-serif;
+  font-size: var(--hype-typography-hero-h1-fontsize);
   font-weight: 800;
   font-style: normal;
   color: #262A3F;
   text-wrap: nowrap;
 }
 
-.info-header-container article {
+.info-header-container>p {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: var(--hype-typography-p-fontsize);
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   color: #67708A;
 
+  height: 80px;
 }
 
-.btn {
-  margin-top: 62px;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  position: relative;
-  background-color: transparent;
-  color: white;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: 10px;
-  width: auto;
-  height: 60px;
-  border: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  overflow: hidden;
-  box-shadow: 0 10px 20px rgba(51, 51, 51, 0.2);
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
 
-}
 
-.btn::before {
-  content: attr(data-two);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  height: 100%;
-  pointer-events: none;
-  background: linear-gradient(135deg, #FE0000, #005FFF);
-  transform: translate(0%, 90%);
-  z-index: 99;
-  position: relative;
-  transform-origin: bottom;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  padding: 0px 10px;
-}
 
-.btn::after {
-  content: attr(data-one);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #131316;
-  width: auto;
-  height: 100%;
-  pointer-events: none;
-  transform-origin: top;
-  transform: translate(0%, -100%);
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  padding: 0px 10px;
-}
-
-.btn:hover::before {
-  transform: translate(0%, 0%);
-}
-
-.btn:hover::after {
-  transform: translate(0%, -200%);
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.btn:active {
-  scale: 0.95;
+#headerMoreBtn svg path{
+  fill: var(--hype-background-color-one);
 }
 
 
 
 
 
-@media screen and (max-width: 360px) {
-  .info-header-container>div>h1 {
-    font-size: 38px;
+
+
+@media screen and (max-width: 480px) {
+  .info-header-container {
+    min-height: 700px;
   }
 }
-
-@media screen and (min-width: 360px) {
-  .info-header-container>div>h1 {
-    font-size: 48px;
-  }
-}
-
-
-
-
-
-
-@media screen and (min-width: 400px) {
-
-  .info-header-container>div>h1 {
-    font-size: 54px;
-
-  }
-
-}
-@media screen and (min-width: 600px) {
-
-  .info-header-container>div>h1 {
-    font-size: 68px;
-
-  }
-
-}
-
-
-
 
 @media screen and (max-width: 600px) {
+  #headerMoreBtn svg path{
+    fill: rgb(255, 255, 255);
+  }
+
+  
   .home>header {
     background-color: #131316;
   }
@@ -289,10 +218,8 @@
     color: white;
   }
 
-  .info-header-container article {
+  .info-header-container>p {
     color: #9f9fa3;
-    font-weight: 400;
-    max-width: 80%;
   }
 
   .btn::after {
@@ -306,11 +233,6 @@
 }
 
 @media screen and (min-width: 1080px) {
-  .info-header-container>div>h1 {
-    font-size: 60px;
-
-  }
-
 
   .bro-code-container {
     display: flex;
@@ -346,10 +268,7 @@
     width: 40%;
   }
 
-  .info-header-container>div>h1 {
-    font-size: 68px;
 
-  }
 }
 
 
@@ -360,18 +279,6 @@
     width: 90%;
   }
 
-  .info-header-container article{
-    font-size: 18px;
-    font-weight: 500;
-  }
-  .info-header-container>div>h1 {
-    font-size: 74px;
-
-  }
-  .info-header-container>div>p {
-    font-size: 32px;
-
-  }
 }
 
 
@@ -380,31 +287,69 @@
     margin-left: -30px;
     width: 90%;
   }
-
-  .info-header-container article{
-    font-size: 18px;
-    font-weight: 500;
-  }
-  .info-header-container>div>h1 {
-    font-size: 92px;
-
-  }
-  .info-header-container>div>p {
-    font-size: 38px;
-
-  }
 }
-
-
-
-
-
-
-
 
 .home>main {
   background-color: rgb(55, 55, 55);
   width: 100%;
-  height: 900px;
   z-index: 2;
+
+
+}
+
+
+
+.btn {
+  border: none;
+  display: flex;
+  padding: 1rem 1.5rem;
+  background-color: white;
+  color: #000000;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+
+  user-select: none;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px #2e2e2e31, 0 2px 4px -1px #43434317;
+  transition: transform .6s ease;
+
+  cursor: pointer;
+}
+
+.btn:focus {
+  opacity: .85;
+  box-shadow: none;
+}
+
+.btn:hover {
+  box-shadow: 0 10px 15px -3px #ffffff4f, 0 4px 6px -2px #ffffff17;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  opacity: .85;
+  box-shadow: none;
+  transform: scale(1.0);
+  background-color: black;
+  color: white;
+
+}
+
+@media (min-width: 600px) {
+  .btn {
+    background-color: #131316;
+    color: white;
+  }
+  
+}
+@media (min-width: 768px) {
+  .btn {
+    min-width: 170px;
+  }
+  
 }
