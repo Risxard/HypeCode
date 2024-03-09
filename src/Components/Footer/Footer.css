@@ -1,57 +1,89 @@
 footer {
-    padding-top: 24px;
-    background-color: #131316;
-}
-
-
-
-.footer-container {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.footer-content {
-    padding-top: 56px;
     display: flex;
+    height: auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    padding-inline: var(--margin-column);
+    padding-block: 48px;
+    color: var(--hype-color-03-variant-01);
+
 }
-.footer-content h4{
-    font-family: "Poppins", sans-serif;
-    font-size: 24px;
 
 
-    color: #CC0405;
+footer p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--hype-color-03-variant-01);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+
+.footer-social-medias {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     margin-bottom: 24px;
 }
 
 
 
-.footer-links {
+.footer-social-medias ul {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 48px;
     list-style-type: none;
+}
 
-    margin-bottom: 32px;
+.footer-social-medias ul li {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.footer-social-medias ul li a {
+    color: var(--hype-color-03-variant-01);
+}
+
+.footer-social-medias ul li:hover, .footer-social-medias ul li:hover p , .footer-social-medias ul li:hover a{
+    color: var(--hype-color-02);
+    transform: scale(1.1);
 }
 
 
-.footer-links>li:not(:last-child) {
-    margin-right: 20px;
+
+.footer-social-medias ul li p {
+    white-space: nowrap;
 }
 
-.footer-links>li a {
-    text-decoration: none;
-    color: white;
+.footer-social-medias ul li svg {
+    width: 32px;
+    height: 32px;
 }
 
 
-.footer-links>li > a svg{
-    width: 38px;
-    height: 38px;
-    
+@media screen and (max-width: 480px) {
+    footer p {
+        font-size: 14px;
+    }
+
+    footer>p {
+        font-size: 12px;
+    }
+
+    .footer-social-medias ul {
+        gap: 18px;
+    }
+
+    .footer-social-medias ul li svg {
+        width: 28px;
+        height: 28px;
+    }
 }

@@ -10,10 +10,45 @@
         }
     },
     "header": {
-        "heroH4": "Your project <1>is here.</1>",
-        "heroH1": "HypeCode is <2/>for you?",
+        "heroH4": "HypeCode <1>software house</1>",
+        "heroH1": "THE BETTER <2/>ONE.",
         "heroP": "Our work tells your digital story in a unique and genuine way.",
-        "heroBtn1" : "Let's get started?",
-        "heroBtn2" : "Lets's go!"
+        "heroBtn1": "Get started"
+    },
+    "about": {
+        "firstBadge": {
+            "title": "Creative Solutions",
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+        },
+        "secondBadge": {
+            "title": "Code Quality",
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+        },
+        "thirdBadge": {
+            "title": "Team of Professionals",
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+        }
+    },
+    "contact": {
+        "contactIntro": {
+            "title": "Get in Touch",
+            "text": "You need more information? Check what other persons are saying about our product. They are very happy with their purchase.",
+            "cityName": "Vitória",
+            "LocationName": "Espirito Santo, Brazil."
+        },
+        "formTranslation": {
+            "firstName": "First name",
+            "firstNamePlaceholder": "Michael",
+            "lastName": "Last name",
+            "lastNamePlaceholder": "Jackson",
+            "tel": "Your phone number",
+            "telPlaceholder": "(+21) 444 444 444",
+            "email": "Email Address",
+            "emailPlaceholder": "your-email@gmail.com",
+            "message": "Your message",
+            "messagePlaceholder": "Type here",
+            "terms1": "i agree to the ",
+            "terms2": "Terms and Conditions"
+        }
     }
 }

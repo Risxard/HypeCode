@@ -27,9 +27,7 @@ function Navigation() {
 
 
   const handleScrollTo = (ref) => {
-
     const idToScroll = document.getElementById(ref)
-
     if (idToScroll) {
       scrollTo(idToScroll);
     }
@@ -46,7 +44,7 @@ function Navigation() {
         <li>{home}</li>
         <li onClick={(() => handleScrollTo("about"))}>{aboutUs}</li>
         <li onClick={(() => handleScrollTo("ourServices"))}>{ourServices}</li>
-        <li>{contact}</li>
+        <li onClick={(() => handleScrollTo("contact"))}>{contact}</li>
         <li>
           <LanguageSelector languageSelector={languageSelector} />
         </li>

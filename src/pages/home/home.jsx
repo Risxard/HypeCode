@@ -1,29 +1,44 @@
-import "./home.css";
-
-import broCodes from "../../assets/imgs/pngs/broCodes.png";
-import DoubleArrowDown from "../../Components/Svgs/DoubleArrowDown/DoubleArrowDown";
+import { useEffect, useRef,useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import AboutUs from "../../Components/AboutUs/AboutUs";
-import { useRef } from "react";
-
 import { scrollTo } from "../../functions/scrollTo/scrollTo";
 
-import BroCode from '../../Components/Svgs/BroCode'
+import DoubleArrowDown from "../../Components/Svgs/DoubleArrowDown/DoubleArrowDown";
+import AboutUs from "../../Components/AboutUs/AboutUs";
+import BroCode from "../../Components/Svgs/BroCode";
 import Portfolio from "../../Components/Portfolio/Portfolio";
 
-function Home() {
-  const { t } = useTranslation();
+import "./home.css";
+import Contact from "../../Components/Contact/Contact";
 
-  const { heroH4, heroH1, heroP, heroBtn1, heroBtn2 } = t("header");
+function Home() {
+  const [showButton, setShowButton] = useState(true);
 
   const mainRef = useRef();
+  const { t } = useTranslation();
+  const { heroH4, heroH1, heroP, heroBtn1 } = t("header");
 
   const handleScrollTo = (ref) => {
-    console.log('hello!')
-    if (ref.current) {
-      scrollTo(ref.current);
+    const idToScroll = document.getElementById(ref)
+    if (idToScroll) {
+      scrollTo(idToScroll);
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowButton(false);
+      } else {
+        setShowButton(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="home" id="home">
@@ -40,29 +55,32 @@ function Home() {
           </div>
           <p>{heroP}</p>
 
-
-          <button className="btn" role="button">{heroBtn1}</button>
-
-          <div className="btn-down-container">
-            <span className="btn-to-down" onClick={() => handleScrollTo(mainRef)}>
-              <DoubleArrowDown />
-            </span>
-          </div>
+          <button className="btn" role="button" onClick={() => handleScrollTo("contact")}>
+            {heroBtn1}
+          </button>
         </div>
 
         <div className="bro-code-container">
-          <BroCode/>
+          <BroCode />
         </div>
 
-
+        {showButton && (
+          <div className="btn-down-container">
+            <span
+              className="btn-to-down"
+              onClick={() => handleScrollTo("about")}
+            >
+              <DoubleArrowDown />
+            </span>
+          </div>
+        )}
       </header>
 
       <main ref={mainRef}>
         <AboutUs />
-        <Portfolio/>
+        {/* <Portfolio /> */}
+        <Contact/>
       </main>
-
-
     </div>
   );
 }

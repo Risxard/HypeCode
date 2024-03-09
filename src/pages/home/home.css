@@ -4,15 +4,14 @@
   width: 100%;
   height: auto;
 
-}
-
-.header-main{
   overflow: hidden;
+
 }
 
 
 .background-tags {
-  position: fixed;
+  display: none;
+  position: absolute;
   width: 100%;
   height: 100%;
   background-image: url('../../assets/imgs/svgs/HeroTags.svg');
@@ -65,14 +64,16 @@
 .bro-code-container {
   display: none;
   flex: 1;
-  background-color: #131316;
+  align-items: center;
+  justify-content: center;
   padding-top: var(--nav-height);
   position: relative;
+
+  padding-left: 24px;
 
 }
 
 .bro-code-container svg {
-  margin-left: -30px;
   width: 580px;
   height: auto;
   object-fit: contain;
@@ -108,13 +109,13 @@
   align-items: flex-start;
   position: relative;
   justify-content: center;
-  width: 800px;
+  flex: 0.5;
   height: auto;
 
   color: black;
 
   padding-left: var(--margin-column);
-  padding-right: var(--margin-column);
+
 
   padding-top: var(--nav-height);
 
@@ -170,7 +171,7 @@
   font-size: var(--hype-typography-hero-h1-fontsize);
   font-weight: 800;
   font-style: normal;
-  color: #262A3F;
+  color: var(--hype-color-03);
   text-wrap: nowrap;
 }
 
@@ -180,7 +181,7 @@
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-style: normal;
-  color: #67708A;
+  color: var(--hype-color-03-variant-02);
 
   height: 80px;
 }
@@ -188,7 +189,7 @@
 
 
 
-#headerMoreBtn svg path{
+#headerMoreBtn svg path {
   fill: var(--hype-background-color-one);
 }
 
@@ -205,11 +206,11 @@
 }
 
 @media screen and (max-width: 600px) {
-  #headerMoreBtn svg path{
+  #headerMoreBtn svg path {
     fill: rgb(255, 255, 255);
   }
 
-  
+
   .home>header {
     background-color: #131316;
   }
@@ -219,7 +220,7 @@
   }
 
   .info-header-container>p {
-    color: #9f9fa3;
+    color: var(--hype-color-03-variant-05);
   }
 
   .btn::after {
@@ -244,7 +245,7 @@
   }
 
   .bro-code-container svg {
-    margin-left: -30px;
+
     width: 100%;
   }
 
@@ -259,8 +260,8 @@
 
 @media screen and (min-width: 1280px) {
   .bro-code-container svg {
-    margin-left: -30px;
-    width: 100%;
+
+    width: 90%;
   }
 
   .info-header-container {
@@ -275,8 +276,7 @@
 
 @media screen and (min-width: 1400px) {
   .bro-code-container svg {
-    margin-left: -30px;
-    width: 90%;
+    width: 80%;
   }
 
 }
@@ -284,13 +284,12 @@
 
 @media screen and (min-width: 1600px) {
   .bro-code-container svg {
-    margin-left: -30px;
-    width: 90%;
+    width: 80%;
   }
 }
 
 .home>main {
-  background-color: rgb(55, 55, 55);
+
   width: 100%;
   z-index: 2;
 
@@ -302,6 +301,8 @@
 .btn {
   border: none;
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem 1.5rem;
   background-color: white;
   color: #000000;
@@ -345,11 +346,12 @@
     background-color: #131316;
     color: white;
   }
-  
+
 }
+
 @media (min-width: 768px) {
   .btn {
     min-width: 170px;
   }
-  
+
 }

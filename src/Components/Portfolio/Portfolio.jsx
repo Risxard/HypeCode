@@ -1,13 +1,9 @@
 import "./Portfolio.css";
-import React from "react";
-
-import mockup1 from "./mockups/mockup1.jpg";
-import mockup2 from "./mockups/mockup2.jpg";
+import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
-
 import { ExternalLink } from "lucide-react";
-import { useState } from "react";
+
 
 const latestCards = [
   {
@@ -30,13 +26,13 @@ const cards = [
   {
     id: "1",
     img_url:
-      "https://freemockupzone.com/wp-content/uploads/2022/08/Free-Laptop-Placing-on-Sofa-Website-Mockup.jpg",
+      "https://unblast.com/wp-content/uploads/2020/05/Website-Mockup.jpg",
     card_url: "https://www.hypercode.com.br/card1",
   },
   {
     id: "2",
     img_url:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC08zW5n6wJpjZ0yBMT7ghhPBa74BUHZOmpw&usqp=CAU",
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400/d9da7186671043.5da0631cea32e.png",
     card_url: "https://www.hypercode.com.br/card2",
   },
   {
@@ -48,31 +44,55 @@ const cards = [
   {
     id: "4",
     img_url:
-      "https://zippypixels.com/wp-content/uploads/2015/11/perspecitve-website-mockup-3-slides-top-view.jpg",
+      "https://img.freepik.com/premium-psd/website-instant-showcase-mockup-isolated_359791-328.jpg",
     card_url: "https://www.hypercode.com.br/card4",
   },
   {
     id: "5",
     img_url:
-      "https://www.mockupworld.co/wp-content/uploads/2017/05/free-showcasing-header-mockup.jpg",
+      "https://i.pinimg.com/1200x/8f/67/6f/8f676f986d1d9e4e1fbd5699d56c3199.jpg",
     card_url: "https://www.hypercode.com.br/card5",
   },
   {
     id: "6",
     img_url:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyubWoqBK9C4-mG73ZCi9fZLUaDhxs8P9L2noJvseROq9QxizikwpJZhdRRU7NSYlzxhg&usqp=CAU",
+      "https://miro.medium.com/v2/resize:fit:1400/0*HZZrSYhmFsITWBC8.jpg",
     card_url: "https://www.hypercode.com.br/card6",
   },
   {
     id: "7",
     img_url:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyoxnlUSxuYq6TtqYQ2blpYqksHy0Y7eVvmIV5RLDF3MaGuZyCmhXb-rAmO7_EWYYGXXg&usqp=CAU",
+      "https://freebiesmockup.com/wp-content/uploads/2022/11/Free-Multi-Device-Website-Mockup-2.jpg",
     card_url: "https://www.hypercode.com.br/card7",
   },
   {
     id: "8",
     img_url:
-      "https://i0.wp.com/365webresources.com/wp-content/uploads/2018/05/Clean-Website-Showcase-Mockup.png?fit=880%2C503&ssl=1",
+      "https://img.freepik.com/free-psd/website-template-laptop-screen_53876-57297.jpg",
+    card_url: "https://www.hypercode.com.br/card8",
+  },
+  {
+    id: "5",
+    img_url:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/1400/d9da7186671043.5da0631cea32e.png",
+    card_url: "https://www.hypercode.com.br/card5",
+  },
+  {
+    id: "6",
+    img_url:
+      "https://uizard.io/blog/content/images/2023/07/1.-business-web-mobile-cover.png",
+    card_url: "https://www.hypercode.com.br/card6",
+  },
+  {
+    id: "7",
+    img_url:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/57118352733587.591af4ae74b9c.jpg",
+    card_url: "https://www.hypercode.com.br/card7",
+  },
+  {
+    id: "8",
+    img_url:
+      "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e11adc55513591.598816e34c497.jpg",
     card_url: "https://www.hypercode.com.br/card8",
   },
 ];
@@ -94,90 +114,10 @@ function CardComponent({ img_url, card_url }) {
 }
 
 const Portfolio = () => {
-  const [selectedDot, setSelectedDot] = useState(0);
 
   return (
     <div className="portfolio-container" id="ourServices">
-      <div className="title-portfolio">
-        <h2>Check out our latest works</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo,
-          quaerat.
-        </p>
-      </div>
 
-      <div className="projects-container">
-        <div className="latest-projects">
-          <ul>
-            {latestCards.map((card, index) => {
-              return (
-                <li key={index}>
-                  <Link to={"https://www.hypecode/"} target="blank">
-                    <div className="portfolio-card-image-container">
-                      <img src={card.img_url} alt="CARD IMAGE" loading="lazy"/>
-                      <div className="card-body">
-                        <span>
-                          <p>Go to link</p>
-                          <ExternalLink />
-                        </span>
-                      </div>
-                    </div>
-                    <div className="portoflio-card-title-container">
-                      <h2>{card.title}</h2>
-                      <p>{card.resume}</p>
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-
-        <div className="slider-container-portoflio">
-          <div className="carousel-cards">
-            {cards.map(
-              (card, index) =>
-                index % 4 === 0 && (
-                  <ul
-                    key={index / 4}
-                    className={`card-page${
-                      index / 4 === selectedDot ? " active" : ""
-                    }`}
-                  >
-                    {cards.slice(index, index + 4).map((card, i) => (
-                      <CardComponent
-                        key={i}
-                        img_url={card.img_url}
-                        card_url={card.card_url}
-                      />
-                    ))}
-                  </ul>
-                )
-            )}
-          </div>
-
-          <div className="carousel-control-container">
-            {Array(Math.ceil(cards.length / 4))
-              .fill()
-              .map((_, index) => (
-                <React.Fragment key={index}>
-                  <input
-                    type="radio"
-                    className="input"
-                    name="option"
-                    id={`option${index + 1}`}
-                    onClick={() => setSelectedDot(index)}
-                    defaultChecked={selectedDot}
-                  />
-                  <label
-                    htmlFor={`option${index + 1}`}
-                    className={`${selectedDot === index ? "active" : ""}`}
-                  ></label>
-                </React.Fragment>
-              ))}
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

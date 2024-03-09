@@ -1,31 +1,75 @@
 import "./Footer.css";
-import { Linkedin, Instagram, Github } from "lucide-react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faWhatsapp,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+import i18next from "i18next";
+
+import { scrollTo } from "../../functions/scrollTo/scrollTo";
+
 function Footer() {
+  const wppPtUrl =
+    "https://api.whatsapp.com/send/?phone=15551234567&text=Tenho+interesse+em+criar+um+projeto+com+a+HypeCode.+Tem+um+horário+disponível?&type=phone_number&app_absent=0";
+
+  const wppEnUrl =
+    "https://api.whatsapp.com/send/?phone=15551234567&text=I'm+interested+in+creating+a+project+with+HypeCode.+Do+you+have+any+available+time?&type=phone_number&app_absent=0";
+
+  const handleScrollTo = (ref) => {
+    const idToScroll = document.getElementById(ref);
+    if (idToScroll) {
+      scrollTo(idToScroll);
+    }
+  };
+
   return (
     <footer>
-      <div className="footer-container">
-        <div className="footer-content on-dark">
-          <h4>SOCIAL MEDIAS</h4>
-          <ul className="footer-links">
-            <li>
-              <a href="">
-                <Linkedin />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <Instagram />
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <Github />
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="footer-badges"></div>
+      <div className="footer-social-medias">
+        <ul>
+          <li onClick={() => handleScrollTo("home")}>
+            <p>Home</p>
+          </li>
+          <li onClick={() => handleScrollTo("about")}>
+          <p>About us</p>
+          </li>
+          <li onClick={() => handleScrollTo("ourServices")}>
+          <p>Our services</p>
+          </li>
+          <li onClick={() => handleScrollTo("contact")}>
+            <p>Contact</p>
+          </li>
+        </ul>
       </div>
+
+      <div className="footer-social-medias">
+        <ul>
+          <li>
+            <a
+              href={`https://www.instagram.com/emersonsv.theone/`}
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+          </li>
+          <li>
+            <a
+              href={`${i18next.language === "pt-BR" ? wppPtUrl : wppEnUrl}`}
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faWhatsapp} />
+            </a>
+          </li>
+          <li>
+            <a href={`https://github.com/Risxard`} target="_blank">
+              <FontAwesomeIcon icon={faGithub} />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <p>Copyright © 2024 All right reserved HypeCode </p>
     </footer>
   );
 }

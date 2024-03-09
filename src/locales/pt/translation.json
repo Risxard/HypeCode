@@ -13,8 +13,42 @@
         "heroH4": "Seu projeto <1>está aqui.</1>",
         "heroH1": "HypeCode é <2/>para você?",
         "heroP": "Nosso trabalho conta sua história digital de forma única e verdadeira.",
-        "heroBtn1" : "Vamos começar?",
-        "heroBtn2" : "Vamos lá!"
+        "heroBtn1": "Iniciar projeto"
+    },
+    "about": {
+        "firstBadge": {
+            "title": "Soluções Criativas",
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+        },
+        "secondBadge": {
+            "title": "Codigo de qualidade",
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+        },
+        "thirdBadge": {
+            "title": "Time de Profissionais",
+            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+        }
+    },
+    "contact": {
+        "contactIntro": {
+            "title": "Entre em contato",
+            "text": "Você precisa de mais informações? Veja o que os outros estão dizendo sobre nosso produto. Eles estão muito felizes com a compra deles.",
+            "cityName": "Vitória",
+            "LocationName": "Espirito Santo, Brasil."
+        },
+        "formTranslation": {
+            "firstName": "Seu primeiro nome",
+            "firstNamePlaceholder": "Michael",
+            "lastName": "Seu sobrenome",
+            "lastNamePlaceholder": "Jackson",
+            "tel": "Numero de telefone",
+            "telPlaceholder": "(+21) 444 444 444",
+            "email": "Endereço de email",
+            "emailPlaceholder": "seu-email@gmail.com",
+            "message": "Sua mensagem",
+            "messagePlaceholder": "Escreva aqui",
+            "terms1": "Eu aceito os ",
+            "terms2": "Termos e condições."
+        }
     }
-
 }
