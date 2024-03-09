@@ -1,3 +1,14 @@
+
+
+
+
+![image](https://github.com/Risxard/HypeCode/assets/88140056/27faa98c-4dfb-4860-9568-8f5b4bb53de1)
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
