@@ -10,12 +10,18 @@ import i18next from "i18next";
 
 import { scrollTo } from "../../functions/scrollTo/scrollTo";
 
+import { useTranslation } from "react-i18next";
+
 function Footer() {
   const wppPtUrl =
     "https://api.whatsapp.com/send/?phone=15551234567&text=Tenho+interesse+em+criar+um+projeto+com+a+HypeCode.+Tem+um+horário+disponível?&type=phone_number&app_absent=0";
 
   const wppEnUrl =
     "https://api.whatsapp.com/send/?phone=15551234567&text=I'm+interested+in+creating+a+project+with+HypeCode.+Do+you+have+any+available+time?&type=phone_number&app_absent=0";
+
+
+  const { t } = useTranslation();
+  const { home, aboutUs, portfolio, contact } = t("navigation");
 
   const handleScrollTo = (ref) => {
     const idToScroll = document.getElementById(ref);
@@ -29,16 +35,16 @@ function Footer() {
       <div className="footer-social-medias">
         <ul>
           <li onClick={() => handleScrollTo("home")}>
-            <p>Home</p>
+            <p>{home}</p>
           </li>
           <li onClick={() => handleScrollTo("about")}>
-          <p>About us</p>
+            <p>{aboutUs}</p>
           </li>
           <li onClick={() => handleScrollTo("ourServices")}>
-          <p>Our services</p>
+            <p>{portfolio}</p>
           </li>
           <li onClick={() => handleScrollTo("contact")}>
-            <p>Contact</p>
+            <p>{contact}</p>
           </li>
         </ul>
       </div>

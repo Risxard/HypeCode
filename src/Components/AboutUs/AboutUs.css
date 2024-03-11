@@ -4,10 +4,20 @@
     align-items: center;
     justify-content: center;
 
-    margin-top: 92px;
-    padding: 80px 0px;
+
+
+
+    padding-inline: 92px;
     margin-left: var(--margin-column);
     margin-right: var(--margin-column);
+}
+
+.AboutUs>div{
+    padding-top: 92px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-us-intro {
@@ -53,10 +63,10 @@
 
 
 .about-card svg {
-    width: 48px;
-    height: 48px;
+    width: 62px;
+    height: 62px;
     margin-bottom: 24px;
-    color: var(--hype-color-01);
+    color: var(--hype-color-02);
 }
 
 .about-card h3 {

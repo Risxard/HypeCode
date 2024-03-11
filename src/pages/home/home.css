@@ -343,7 +343,7 @@
 
 @media (min-width: 600px) {
   .btn {
-    background-color: #131316;
+    background-color: var(--hype-color-03);
     color: white;
   }
 

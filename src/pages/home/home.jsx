@@ -9,6 +9,7 @@ import Portfolio from "../../Components/Portfolio/Portfolio";
 
 import "./home.css";
 import Contact from "../../Components/Contact/Contact";
+import OurServices from "../../Components/OurServices/OurServices";
 
 function Home() {
   const [showButton, setShowButton] = useState(true);
@@ -78,7 +79,8 @@ function Home() {
 
       <main ref={mainRef}>
         <AboutUs />
-        {/* <Portfolio /> */}
+        <OurServices/>
+        <Portfolio />
         <Contact/>
       </main>
     </div>

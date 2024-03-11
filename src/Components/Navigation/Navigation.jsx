@@ -13,48 +13,49 @@ function Navigation() {
   const [modal, setModal] = useState(false);
 
   const { t } = useTranslation();
-  const { home, aboutUs, ourServices, contact, languageSelector } =
+  const { home, aboutUs, portfolio, contact, ourServices, languageSelector } =
     t("navigation");
 
   const handleToggleMenu = () => {
-    if(!modal){
+    if (!modal) {
       setModal(true);
-    } else{
+    } else {
       setModal(false);
     }
   };
 
-
-
   const handleScrollTo = (ref) => {
-    const idToScroll = document.getElementById(ref)
+    const idToScroll = document.getElementById(ref);
     if (idToScroll) {
       scrollTo(idToScroll);
     }
   };
 
-
   return (
-    <nav className={`${modal? 'active' : ""}`}>
+    <nav className={`${modal ? "active" : ""}`}>
       <span className="logo">
         <HCLogo />
       </span>
 
       <ul>
         <li>{home}</li>
-        <li onClick={(() => handleScrollTo("about"))}>{aboutUs}</li>
-        <li onClick={(() => handleScrollTo("ourServices"))}>{ourServices}</li>
-        <li onClick={(() => handleScrollTo("contact"))}>{contact}</li>
+        <li onClick={() => handleScrollTo("about")}>{aboutUs}</li>
+        <li onClick={() => handleScrollTo("about")}>{ourServices}</li>
+        <li onClick={() => handleScrollTo("portfolio")}>{portfolio}</li>
+        <li onClick={() => handleScrollTo("contact")}>{contact}</li>
         <li>
           <LanguageSelector languageSelector={languageSelector} />
         </li>
       </ul>
 
-      <span className={`ham-menu ${modal? 'active' : ""}`} onClick={(() => handleToggleMenu())}>
+      <span
+        className={`ham-menu ${modal ? "active" : ""}`}
+        onClick={() => handleToggleMenu()}
+      >
         <AlignJustify />
       </span>
 
-      {modal? <HamMenuModal handleCb={handleToggleMenu}/> : ""}
+      {modal ? <HamMenuModal handleCb={handleToggleMenu} /> : ""}
     </nav>
   );
 }

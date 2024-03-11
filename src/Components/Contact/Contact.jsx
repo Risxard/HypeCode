@@ -4,12 +4,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faPhoneFlip, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 
 function Contact() {
   const [terms, setTerms] = useState(false);
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+  const [tel, setTel] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
 
   const { t } = useTranslation();
   const { contactIntro, formTranslation } = t("contact");
@@ -18,16 +23,32 @@ function Contact() {
     setTerms(!terms);
   };
 
-  const handleSubmit = () => {
-    // Adicione aqui a lógica para enviar o formulário
-    console.log("Formulário enviado!");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      firstName === "" ||
+      lastName === "" ||
+      tel === "" ||
+      email === "" ||
+      message === "" ||
+      terms
+    ) {
+      alert("Preencha todos os campos");
+    }
+
+    const templateParams = {
+      from_name: firstName,
+      message: message,
+      email: email,
+    };
   };
 
   const wppPtUrl =
-    "https://api.whatsapp.com/send/?phone=15551234567&text=Tenho+interesse+em+criar+um+projeto+com+a+HypeCode.+Tem+um+horário+disponível?&type=phone_number&app_absent=0";
+    "https://api.whatsapp.com/send/?phone=27999769330&text=Tenho+interesse+em+criar+um+projeto+com+a+HypeCode.+Tem+um+horário+disponível?&type=phone_number&app_absent=0";
 
   const wppEnUrl =
-    "https://api.whatsapp.com/send/?phone=15551234567&text=I'm+interested+in+creating+a+project+with+HypeCode.+Do+you+have+any+available+time?&type=phone_number&app_absent=0";
+    "https://api.whatsapp.com/send/?phone=27999769330&text=I'm+interested+in+creating+a+project+with+HypeCode.+Do+you+have+any+available+time?&type=phone_number&app_absent=0";
 
   return (
     <section className="contact" id="contact">
@@ -47,25 +68,29 @@ function Contact() {
 
         <div className="get-in-touch-contact">
           <span>
-            <FontAwesomeIcon icon={faPhoneFlip} target="_blank"/>
-            <a href="tel: +5527999-9999">(+55 ) 27 999-9999</a>
-            <p></p>
+            <FontAwesomeIcon icon={faPhoneFlip} target="_blank" />
+            <a href="tel: +5527 99976-9330">
+              <p>(+55 ) 27 99976-9330</p>
+            </a>
           </span>
           <span>
             <FontAwesomeIcon icon={faWhatsapp} />
-            <a href={`${i18next.language === "pt-BR" ? wppPtUrl : wppEnUrl}`} target="_blank">
-              <p>(+55 ) 27 999-9999</p>
+            <a
+              href={`${i18next.language === "pt-BR" ? wppPtUrl : wppEnUrl}`}
+              target="_blank"
+            >
+              <p>(+55 ) 27 99976-9330</p>
             </a>
           </span>
 
           <span>
-            <FontAwesomeIcon icon={faEnvelope} target="_blank"/>
+            <FontAwesomeIcon icon={faEnvelope} target="_blank" />
             <a href="mailto: hypecode@email.com">hypecode@email.com</a>
           </span>
         </div>
       </div>
 
-      <form action="/submit" method="post" className="contact-form">
+      <form method="post" className="contact-form" onSubmit={handleSubmit}>
         <div className="row">
           <div className="form-name">
             <div className="form-inner">
@@ -75,6 +100,7 @@ function Contact() {
                   type="text"
                   id="first-name"
                   placeholder={formTranslation.firstNamePlaceholder}
+                  onChange={(e) => setFirstName(e.target.value)}
                   required
                 />
               </div>
@@ -88,6 +114,7 @@ function Contact() {
                   type="text"
                   id="last-name"
                   placeholder={formTranslation.lastNamePlaceholder}
+                  onChange={(e) => setLastName(e.target.value)}
                   required
                 />
               </div>
@@ -103,6 +130,7 @@ function Contact() {
                 type="tel"
                 id="tel"
                 placeholder={formTranslation.telPlaceholder}
+                onChange={(e) => setTel(e.target.value)}
                 required
               />
             </div>
@@ -119,6 +147,7 @@ function Contact() {
                 type="text"
                 id="email"
                 placeholder={formTranslation.emailPlaceholder}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </div>
@@ -134,6 +163,7 @@ function Contact() {
                 placeholder={formTranslation.messagePlaceholder}
                 id="message"
                 name="message"
+                onChange={(e) => setMessage(e.target.value)}
               />
             </div>
           </div>

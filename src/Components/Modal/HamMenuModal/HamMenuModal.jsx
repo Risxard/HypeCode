@@ -13,26 +13,20 @@ function HamMenuModal({ handleCb }) {
   const { i18n } = useTranslation();
   const { t } = useTranslation();
 
-  const { home, aboutUs, ourServices, contact, languageSelector } =
+  const { home, aboutUs, portfolio, contact, ourServices, languageSelector } =
     t("navigation");
-
-
 
   const handleCallBack = () => {
     handleCb();
   };
 
-
-
   const handleScrollTo = (ref) => {
-    const idToScroll = document.getElementById(ref)
+    const idToScroll = document.getElementById(ref);
     if (idToScroll) {
       handleCallBack();
       scrollTo(idToScroll);
     }
   };
-
-
 
   const changeLanguage = () => {
     if (i18n.language === "pt-BR") {
@@ -57,7 +51,8 @@ function HamMenuModal({ handleCb }) {
       <ul>
         <li onClick={() => handleScrollTo("home")}>{home}</li>
         <li onClick={() => handleScrollTo("about")}>{aboutUs}</li>
-        <li>{ourServices}</li>
+        <li onClick={() => handleScrollTo("ourServices")}>{ourServices}</li>
+        <li onClick={() => handleScrollTo("portfolio")}>{portfolio}</li>
         <li onClick={() => handleScrollTo("contact")}>{contact}</li>
 
         <li className="switch-language-container">
@@ -73,7 +68,11 @@ function HamMenuModal({ handleCb }) {
               )}
             </span>
           </div>
-          <p>{i18n.language === "pt-BR" ? languageSelector.pt : languageSelector.en}</p>
+          <p>
+            {i18n.language === "pt-BR"
+              ? languageSelector.pt
+              : languageSelector.en}
+          </p>
         </li>
       </ul>
     </div>

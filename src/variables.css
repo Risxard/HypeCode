@@ -27,8 +27,15 @@
     --hype-margin-small: 8px;
     --hype-margin-medium: 16px;
     --hype-margin-large: 24px;
-    --hype-margin-top: 4rem;
+    --hype-margin-top: 92px;
 }
+
+
+
+section{
+    padding-block: var(--hype-margin-top);
+}
+
 
 
 @media screen and (min-width: 380px) {

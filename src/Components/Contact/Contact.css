@@ -7,8 +7,6 @@
     height: auto;
     padding-inline: var(--margin-column);
     position: relative;
-    padding-block: var(--hype-margin-top);
-
     --bs-gutter-x: 1.5rem;
 }
 
@@ -173,7 +171,7 @@
     border: none;
     padding-inline: 24px;
     padding-block: 12px;
-    background-color: var(--hype-color-02);
+    background-color: var(--hype-color-03);
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.379);
 
     font-weight: 700;
@@ -235,7 +233,7 @@
 @media (min-width: 1000px) {
     .contact {
         flex-direction: row;
-        margin-top: 48px;
+
     }
 }
 
