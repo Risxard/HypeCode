@@ -1,5 +1,5 @@
 :root {
-    color: #ffffff;
+    color: #000000;
     background-color: white;
     font-family: "Poppins", sans-serif;
     font-synthesis: none;
@@ -20,7 +20,7 @@
     --margin-column: 24px;
 
     --paragraph-text-size: 16px;
-    --hype-typography-hero-h1-fontsize: 52px;
+    --hype-typography-hero-h1-fontsize: 24px;
     --hype-typography-hero-p-fontsize: 18px;
     --hype-typography-p-fontsize: 12px;
     --hype-margin-very-small: 4px;
@@ -28,26 +28,53 @@
     --hype-margin-medium: 16px;
     --hype-margin-large: 24px;
     --hype-margin-top: 92px;
+
+    --max-w: 92.5rem;
+}
+
+.max-w{
+    max-width: var(--max-w);
+}
+.section-padding{
+    padding: 4rem 1.5rem;
+}
+
+section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+body{
+
 }
 
 
 
-section{
-    padding-block: var(--hype-margin-top);
+@media (min-width: 1024px) {
+    .section-padding{
+        padding-right: 2rem;
+        padding-left: 2rem;
+    
+    }
 }
 
 
 
 @media screen and (min-width: 380px) {
     #root {
-        --hype-typography-hero-h1-fontsize: 58px;
+        --hype-typography-hero-h1-fontsize: 30px;
         --hype-typography-p-fontsize: 14px;
     }
 }
 
 @media screen and (min-width: 480px) {
     #root {
-        --hype-typography-hero-h1-fontsize: 72px;
+        --hype-typography-hero-h1-fontsize: 38px;
         --hype-typography-hero-p-fontsize: 28px;
         --hype-typography-p-fontsize: 16px;
     }
@@ -56,7 +83,7 @@ section{
 @media screen and (min-width: 600px) {
     #root {
         --margin-column: 32px;
-        --hype-typography-hero-h1-fontsize: 82px;
+        --hype-typography-hero-h1-fontsize: 48px;
         --hype-typography-hero-p-fontsize: 24px;
         --hype-typography-p-fontsize: 16px;
     }
@@ -71,38 +98,37 @@ section{
 @media screen and (min-width: 880px) {
     #root {
         --margin-column: 44px;
-
     }
 }
 
 @media screen and (min-width: 1080px) {
     #root {
-        --hype-typography-hero-h1-fontsize: 62px;
-        --hype-typography-hero-p-fontsize: 24px;
-        --hype-typography-p-fontsize: 16px;
+
+
+        --max-width-align: 1080px;
     }
 }
 
 @media screen and (min-width: 1280px) {
     #root {
         --margin-column: 160px;
+        --max-width-align: 1280px;
 
-        --hype-typography-hero-h1-fontsize: 72px;
-        --hype-typography-hero-p-fontsize: 28px;
-        --hype-typography-p-fontsize: 16px;
+
     }
 }
 
 @media screen and (min-width: 1600px) {
     #root {
-        --hype-typography-hero-h1-fontsize: 82px;
+        --hype-typography-hero-h1-fontsize: 58px;
+        --hype-typography-hero-p-fontsize: 32px;
         --hype-typography-p-fontsize: 18px;
+        --max-width-align: 1480px;
     }
 }
 @media screen and (min-width: 1800px) {
     #root {
-        --hype-typography-hero-h1-fontsize: 92px;
-        --hype-typography-hero-p-fontsize: 32px;
-        --hype-typography-p-fontsize: 18px;
+
+        --max-width-align: 1600px;
     }
 }

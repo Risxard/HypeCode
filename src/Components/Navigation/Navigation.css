@@ -1,18 +1,28 @@
 nav {
     width: 100%;
     height: var(--nav-height);
-
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: absolute;
-
-    padding-left: var(--margin-column);
-    padding-right: var(--margin-column);
     z-index: 99999;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding-inline: 1.5rem;
 }
+
+@media (min-width: 1024px) {
+    nav{
+        padding-right: 2rem;
+        padding-left: 2rem;
+    
+    }
+}
+
+
 nav.active{
     position: fixed;
 

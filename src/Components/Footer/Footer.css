@@ -86,4 +86,13 @@ footer p {
         width: 28px;
         height: 28px;
     }
+
+
+
+    footer  ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 }

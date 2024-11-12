@@ -1,6 +1,6 @@
 import "./Navigation.css";
 import { useTranslation } from "react-i18next";
-import HCLogo from "../Svgs/HCLogo";
+import HCLogo from "../VectorComponents/HCLogo";
 
 import { AlignJustify } from "lucide-react";
 import LanguageSelector from "../LanguageSelector/LanguageSelector";
@@ -13,7 +13,7 @@ function Navigation() {
   const [modal, setModal] = useState(false);
 
   const { t } = useTranslation();
-  const { home, aboutUs, portfolio, contact, ourServices, languageSelector } =
+  const { aboutUs, portfolio, contact, ourServices, languageSelector } =
     t("navigation");
 
   const handleToggleMenu = () => {
@@ -24,27 +24,20 @@ function Navigation() {
     }
   };
 
-  const handleScrollTo = (ref) => {
-    const idToScroll = document.getElementById(ref);
-    if (idToScroll) {
-      scrollTo(idToScroll);
-    }
-  };
 
   return (
-    <nav className={`${modal ? "active" : ""}`}>
+    <nav className={`${modal ? "active" : ""} max-w`}>
       <span className="logo">
         <HCLogo />
       </span>
 
       <ul>
-        <li>{home}</li>
-        <li onClick={() => handleScrollTo("about")}>{aboutUs}</li>
-        <li onClick={() => handleScrollTo("about")}>{ourServices}</li>
-        <li onClick={() => handleScrollTo("portfolio")}>{portfolio}</li>
-        <li onClick={() => handleScrollTo("contact")}>{contact}</li>
+        <li onClick={() => scrollTo("about")}>{aboutUs}</li>
+        <li onClick={() => scrollTo("ourServices")}>{ourServices}</li>
+        <li onClick={() => scrollTo("portfolio")}>{portfolio}</li>
+        <li onClick={() => scrollTo("contact")}>{contact}</li>
         <li>
-          <LanguageSelector languageSelector={languageSelector} />
+          {/* <LanguageSelector languageSelector={languageSelector} /> */}
         </li>
       </ul>
 

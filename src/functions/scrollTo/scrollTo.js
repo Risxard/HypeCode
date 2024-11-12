@@ -1,4 +1,6 @@
 export const scrollTo = (ref) => {
-    ref.scrollIntoView({ behavior: "smooth" });
-  };
-  
+  const elementToScroll = ref?.current || document.getElementById(ref);
+  if (elementToScroll) {
+    elementToScroll.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};

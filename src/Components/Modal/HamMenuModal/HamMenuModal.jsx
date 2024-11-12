@@ -2,7 +2,7 @@ import "./HamMenuModal.css";
 import { useTranslation } from "react-i18next";
 import { X } from "lucide-react";
 
-import HCLogo from "../../Svgs/HCLogo";
+import HCLogo from "../../VectorComponents/HCLogo";
 
 import { scrollTo } from "../../../functions/scrollTo/scrollTo";
 
@@ -21,10 +21,9 @@ function HamMenuModal({ handleCb }) {
   };
 
   const handleScrollTo = (ref) => {
-    const idToScroll = document.getElementById(ref);
-    if (idToScroll) {
+    if (ref) {
       handleCallBack();
-      scrollTo(idToScroll);
+      scrollTo(ref);
     }
   };
 
@@ -49,7 +48,6 @@ function HamMenuModal({ handleCb }) {
       </div>
 
       <ul>
-        <li onClick={() => handleScrollTo("home")}>{home}</li>
         <li onClick={() => handleScrollTo("about")}>{aboutUs}</li>
         <li onClick={() => handleScrollTo("ourServices")}>{ourServices}</li>
         <li onClick={() => handleScrollTo("portfolio")}>{portfolio}</li>

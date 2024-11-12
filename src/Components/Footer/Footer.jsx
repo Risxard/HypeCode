@@ -14,37 +14,30 @@ import { useTranslation } from "react-i18next";
 
 function Footer() {
   const wppPtUrl =
-    "https://api.whatsapp.com/send/?phone=15551234567&text=Tenho+interesse+em+criar+um+projeto+com+a+HypeCode.+Tem+um+horário+disponível?&type=phone_number&app_absent=0";
+    "https://api.whatsapp.com/send/?phone=5527999769330&text=Tenho+interesse+em+criar+um+projeto+com+a+HypeCode.+Tem+um+horário+disponível?&type=phone_number&app_absent=0";
 
   const wppEnUrl =
-    "https://api.whatsapp.com/send/?phone=15551234567&text=I'm+interested+in+creating+a+project+with+HypeCode.+Do+you+have+any+available+time?&type=phone_number&app_absent=0";
-
+    "https://api.whatsapp.com/send/?phone=5527999769330&text=I'm+interested+in+creating+a+project+with+HypeCode.+Do+you+have+any+available+time?&type=phone_number&app_absent=0";
 
   const { t } = useTranslation();
-  const { home, aboutUs, portfolio, contact } = t("navigation");
-
-  const handleScrollTo = (ref) => {
-    const idToScroll = document.getElementById(ref);
-    if (idToScroll) {
-      scrollTo(idToScroll);
-    }
-  };
+  const { home, aboutUs, portfolio, ourServices } = t("navigation");
 
   return (
     <footer>
       <div className="footer-social-medias">
         <ul>
-          <li onClick={() => handleScrollTo("home")}>
+          <li onClick={() => scrollTo("Header")}>
             <p>{home}</p>
           </li>
-          <li onClick={() => handleScrollTo("about")}>
+          <li onClick={() => scrollTo("about")}>
             <p>{aboutUs}</p>
           </li>
-          <li onClick={() => handleScrollTo("ourServices")}>
-            <p>{portfolio}</p>
+          <li onClick={() => scrollTo("ourServices")}>
+            <p>{ourServices}</p>
           </li>
-          <li onClick={() => handleScrollTo("contact")}>
-            <p>{contact}</p>
+
+          <li onClick={() => scrollTo("portfolio")}>
+            <p>{portfolio}</p>
           </li>
         </ul>
       </div>
@@ -53,7 +46,7 @@ function Footer() {
         <ul>
           <li>
             <a
-              href={`https://www.instagram.com/emersonsv.theone/`}
+              href={`https://www.instagram.com/hypecode.softh/`}
               target="_blank"
             >
               <FontAwesomeIcon icon={faInstagram} />
@@ -68,14 +61,17 @@ function Footer() {
             </a>
           </li>
           <li>
-            <a href={`https://github.com/Risxard`} target="_blank">
+            <a
+              href={`https://github.com/HypeCodeSoftwareHouse`}
+              target="_blank"
+            >
               <FontAwesomeIcon icon={faGithub} />
             </a>
           </li>
         </ul>
       </div>
 
-      <p>Copyright © 2024 All right reserved HypeCode </p>
+      <p>Copyright © 2024 All rights reserved HypeCode </p>
     </footer>
   );
 }

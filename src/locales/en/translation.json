@@ -6,7 +6,7 @@
         "portfolio": "Portfolio",
         "contact": "Contact",
         "languageSelector": {
-            "pt": "Portuguese",
+            "pt": "Português",
             "en": "English"
         }
     },
@@ -16,18 +16,54 @@
         "heroP": "Our work tells your digital story in a unique and genuine way.",
         "heroBtn1": "Get started"
     },
-    "about": {
+    "introBadges": {
         "firstBadge": {
             "title": "Creative Solutions",
-            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+            "text": "The most creative programmers in the market!"
         },
         "secondBadge": {
             "title": "Code Quality",
-            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+            "text": "We adopt the model of clean and documented code."
         },
         "thirdBadge": {
             "title": "Team of Professionals",
-            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+            "text": "Team with over 25 programmers, traffic managers, and designers."
+        }
+    },
+    "aboutUs": {
+        "title": "Who we are",
+        "text": "HypeCode is a Software House focused on developing applications, websites, automations, bots, social media design, and traffic management. Founded in 2024, our goal is to deliver well-structured software, exceptional design, and traffic management strategies that make a difference in your business."
+    },
+    "ourServices": {
+        "title": "Our services",
+        "card1": {
+            "title1": "Social media",
+            "title2": "Design",
+            "text": "Boost your brand online with expert social media design services. Stand out effortlessly."
+        },
+        "card2": {
+            "title1": "Web",
+            "title2": "Development",
+            "text": "Transform your online presence with our expert web development services. Create, innovate, and thrive digitally."
+        },
+        "card3": {
+            "title1": "Digital",
+            "title2": "Marketing",
+            "text": "Maximize your digital impact with our tailored digital marketing solutions. Reach, engage, and succeed online effortlessly."
+        },
+        "card4": {
+            "title1": "cyber",
+            "title2": "security",
+            "text": "Secure your digital assets with our comprehensive cybersecurity solutions. Protect, defend, and stay resilient against online threats."
+        }
+    },
+    "portfolio": {
+        "title": "Portfolio",
+        "text": "",
+        "filters": {
+            "all": "All",
+            "design": "Design",
+            "development": "Development"
         }
     },
     "contact": {
@@ -39,9 +75,9 @@
         },
         "formTranslation": {
             "firstName": "First name",
-            "firstNamePlaceholder": "Michael",
+            "firstNamePlaceholder": "ex: Michael",
             "lastName": "Last name",
-            "lastNamePlaceholder": "Jackson",
+            "lastNamePlaceholder": "ex: Kane",
             "tel": "Your phone number",
             "telPlaceholder": "(+21) 444 444 444",
             "email": "Email Address",
@@ -50,6 +86,16 @@
             "messagePlaceholder": "Type here",
             "terms1": "i agree to the ",
             "terms2": "Terms and Conditions"
+        },
+        "errorMessages": {
+            "name": "Please enter a valid name.",
+            "email": {
+                "err1": "Please enter an email.",
+                "err2": "Invalid email format."
+            },
+            "tel": "Please enter a valid number.",
+            "message": "Please write your message.",
+            "agree": "Accept the terms to continue."
         }
     }
 }

@@ -7,7 +7,7 @@
         "contact": "Contato",
         "languageSelector": {
             "pt": "Português",
-            "en": "Inglês"
+            "en": "English"
         }
     },
     "header": {
@@ -16,32 +16,68 @@
         "heroP": "Nosso trabalho conta sua história digital de forma única e verdadeira.",
         "heroBtn1": "Iniciar projeto"
     },
-    "about": {
+    "introBadges": {
         "firstBadge": {
             "title": "Soluções Criativas",
-            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+            "text": "Os programadores mais criativos do mercado!"
         },
         "secondBadge": {
             "title": "Codigo de qualidade",
-            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+            "text": "Adotamos o modelo de codigo limpo  e documentado."
         },
         "thirdBadge": {
             "title": "Time de Profissionais",
-            "text": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, asperiores."
+            "text": "Equipe com +25 programadores, gestores de tráfego e designers"
+        }
+    },
+    "aboutUs": {
+        "title": "Quem somos",
+        "text": "HypeCode é uma Software House focada no desenvolvimento de aplicativos, sites, automações, bots, design para redes sociais e gestão de tráfego. Fundada em 2024, nosso objetivo é entregar softwares bem estruturados, design excepcional e estratégias de gestão de tráfego que façam diferença em seu negócio."
+    },
+    "ourServices": {
+        "title": "Nossos serviços",
+        "card1": {
+            "title1": "Social media",
+            "title2": "Design",
+            "text": "Impulsione sua marca online com serviços especializados em design para redes sociais. Destaque-se facilmente."
+        },
+        "card2": {
+            "title1": "Desenvolvimento",
+            "title2": "Web",
+            "text": "Transforme sua presença online com nossos serviços especializados em desenvolvimento web. Crie, inove e prospere digitalmente"
+        },
+        "card3": {
+            "title1": "Marketing",
+            "title2": "digital",
+            "text": "Potencialize seu impacto digital com nossas soluções de marketing digital personalizadas. Alcance, engaje e tenha sucesso online facilmente"
+        },
+        "card4": {
+            "title1": "cyber",
+            "title2": "security",
+            "text": "Proteja seus ativos digitais com nossas soluções abrangentes de cibersegurança. Defenda-se e mantenha-se resiliente contra ameaças online."
+        }
+    },
+    "portfolio": {
+        "title": "Portfólio",
+        "text": "",
+        "filters": {
+            "all": "Todos",
+            "design": "Design",
+            "development": "Desenvolvido"
         }
     },
     "contact": {
         "contactIntro": {
             "title": "Entre em contato",
-            "text": "Você precisa de mais informações? Veja o que os outros estão dizendo sobre nosso produto. Eles estão muito felizes com a compra deles.",
+            "text": "Você precisa de mais informações? Veja o que os outros estão dizendo sobre nosso produto.",
             "cityName": "Vitória",
             "LocationName": "Espirito Santo, Brasil."
         },
         "formTranslation": {
             "firstName": "Seu primeiro nome",
-            "firstNamePlaceholder": "Michael",
+            "firstNamePlaceholder": "ex: Marcelo",
             "lastName": "Seu sobrenome",
-            "lastNamePlaceholder": "Jackson",
+            "lastNamePlaceholder": "ex: Rodrigues",
             "tel": "Numero de telefone",
             "telPlaceholder": "(+21) 444 444 444",
             "email": "Endereço de email",
@@ -50,6 +86,16 @@
             "messagePlaceholder": "Escreva aqui",
             "terms1": "Eu aceito os ",
             "terms2": "Termos e condições."
+        },
+        "errorMessages": {
+            "name": "Por favor, informe um nome válido.",
+            "email": {
+                "err1": "Por favor, informe um email.",
+                "err2": "Formato de email inválido."
+            },
+            "tel": "Por favor, informe um numero válido.",
+            "message": "Por favor, escreva sua mensagem.",
+            "agree": "Aceite os termos para continuar."
         }
     }
 }
