@@ -16,12 +16,15 @@
 .switch-language-container>img:hover {
     transform: scale(1.25);
 }
-
-
+.switch-language-container>span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .switch-language-container ul {
-    visibility: hidden;
-    opacity: 0;
+    visibility: visible;
+    opacity: 1;
 
 
     margin-top: 42px;
@@ -33,11 +36,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-.switch-language-container.active ul {
-    visibility: visible;
-    opacity: 1;
 
-}
 
 
 

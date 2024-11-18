@@ -8,9 +8,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import i18next from "i18next";
 
-import { scrollTo } from "../../functions/scrollTo/scrollTo";
+
 
 import { useTranslation } from "react-i18next";
+import { scrollTo } from "../../utils/scrollTo";
 
 function Footer() {
   const wppPtUrl =
@@ -25,18 +26,17 @@ function Footer() {
   return (
     <footer>
       <div className="footer-social-medias">
-        <ul>
-          <li onClick={() => scrollTo("Header")}>
+        <ul className="social-links-list">
+          <li onClick={() => scrollTo("Header")} aria-label="Home">
             <p>{home}</p>
           </li>
-          <li onClick={() => scrollTo("about")}>
+          <li onClick={() => scrollTo("about")} aria-label="AboutUs">
             <p>{aboutUs}</p>
           </li>
-          <li onClick={() => scrollTo("ourServices")}>
+          <li onClick={() => scrollTo("ourServices")} aria-label="OurServices">
             <p>{ourServices}</p>
           </li>
-
-          <li onClick={() => scrollTo("portfolio")}>
+          <li onClick={() => scrollTo("portfolio")} aria-label="Portfolio">
             <p>{portfolio}</p>
           </li>
         </ul>
@@ -48,6 +48,7 @@ function Footer() {
             <a
               href={`https://www.instagram.com/hypecode.softh/`}
               target="_blank"
+              aria-label="Instagram"
             >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
@@ -56,6 +57,7 @@ function Footer() {
             <a
               href={`${i18next.language === "pt-BR" ? wppPtUrl : wppEnUrl}`}
               target="_blank"
+              aria-label="WhatsApp"
             >
               <FontAwesomeIcon icon={faWhatsapp} />
             </a>
@@ -64,6 +66,7 @@ function Footer() {
             <a
               href={`https://github.com/HypeCodeSoftwareHouse`}
               target="_blank"
+              aria-label="GitHub"
             >
               <FontAwesomeIcon icon={faGithub} />
             </a>

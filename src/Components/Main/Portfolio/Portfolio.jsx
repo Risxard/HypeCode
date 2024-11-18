@@ -2,18 +2,24 @@ import { useEffect, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import "./Portfolio.css";
+import { getAllProjects } from "../../../lib/dato-cms";
 
-const Portfolio = ({ projects = [] }) => {
-  const [latestProjects, setLatestProjects] = useState([]);
+const Portfolio = () => {
+  const [projects, setProjects] = useState([]);
   const { t, i18n } = useTranslation();
   const { title, text } = t("portfolio");
 
+  const getStaticProps = async () => {
+    const data = await getAllProjects();
+
+    if (data.allProjectArticles) {
+      setProjects(data.allProjectArticles);
+    }
+  };
+
   useEffect(() => {
-    const filteredProjects = projects.filter(
-      (project) => project.latestProject === true
-    );
-    setLatestProjects(filteredProjects);
-  }, [projects]);
+    getStaticProps();
+  }, []);
 
   return (
     <section className="portfolio-container" id="portfolio">
@@ -26,7 +32,7 @@ const Portfolio = ({ projects = [] }) => {
         <div className="projects-container">
           <div className="latest-projects">
             <ul>
-              {latestProjects.map((card) => (
+              {projects.map((card) => (
                 <li key={card.id || card.projectUrl}>
                   <a href={card.projectUrl} target="_blank">
                     <div className="portfolio-card-image-container">

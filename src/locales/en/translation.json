@@ -4,11 +4,7 @@
         "aboutUs": "About us",
         "ourServices": "Our services",
         "portfolio": "Portfolio",
-        "contact": "Contact",
-        "languageSelector": {
-            "pt": "Português",
-            "en": "English"
-        }
+        "contact": "Contact"
     },
     "header": {
         "heroH4": "HypeCode <1>software house</1>",
@@ -96,6 +92,11 @@
             "tel": "Please enter a valid number.",
             "message": "Please write your message.",
             "agree": "Accept the terms to continue."
+        },
+        "statusMessages": {
+            "isLoading": "Sending email...",
+            "success": "Email sent!",
+            "error": "Error sending email!"
         }
     }
 }

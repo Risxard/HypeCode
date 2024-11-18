@@ -88,11 +88,16 @@ footer p {
     }
 
 
-
     footer  ul{
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .social-links-list{
+        flex-wrap: wrap;
     }
 }

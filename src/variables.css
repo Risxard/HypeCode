@@ -83,9 +83,7 @@ body{
 @media screen and (min-width: 600px) {
     #root {
         --margin-column: 32px;
-        --hype-typography-hero-h1-fontsize: 48px;
-        --hype-typography-hero-p-fontsize: 24px;
-        --hype-typography-p-fontsize: 16px;
+
     }
 }
 
@@ -115,6 +113,7 @@ body{
         --max-width-align: 1280px;
 
 
+
     }
 }
 
@@ -132,3 +131,4 @@ body{
         --max-width-align: 1600px;
     }
 }
+

@@ -3,11 +3,11 @@ import StringToDOM from "../../Components/StringToDom/StringToDom";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getAllProjects } from "../../lib/dato-cms";
-import DoubleArrowDown from "../VectorComponents/DoubleArrowDown/DoubleArrowDown";
-import BroCode from "../VectorComponents/BroCode";
+import DoubleArrowDown from "./assets/DoubleArrowDown";
+import BroCode from "./assets/BroCode";
 
 import "./Header.css";
-import { scrollTo } from "../../functions/scrollTo/scrollTo";
+import { scrollTo } from "../../utils/scrollTo";
 
 const Header = () => {
   const [showButton, setShowButton] = useState(true);
@@ -81,7 +81,7 @@ const Header = () => {
 
         <button
           className="btn"
-          role="button"
+          aria-label="heroBtn1"
           onClick={() => scrollTo("contact")}
         >
           {heroBtn1}
@@ -95,6 +95,7 @@ const Header = () => {
       <div className="btn-down-container">
         <button
           className={`btn-to-down ${!showButton && 'active'}`}
+          aria-label="btn-down-container"
           onClick={() => scrollTo("main")}
         >
           <DoubleArrowDown />

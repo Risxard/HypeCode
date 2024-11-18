@@ -1,9 +1,11 @@
+import { useTranslation } from "react-i18next";
 import "./style.css";
 
-function LoadingSVG() {
+function LoadingSVG({ statusText }) {
   return (
     <>
       <svg
+        data-testid="loading-svg"
         id="LOADING-SVG"
         width="115px"
         height="115px"
@@ -18,34 +20,20 @@ function LoadingSVG() {
           fill="none"
           fillRule="evenodd"
         >
-          <circle
-            id="filled-circle"
-            fill="#131316"
-            cx="66.5"
-            cy="66.5"
-            r="54.5"
-          />
-
-          <circle
-            id="outline"
-            stroke="#FFFFFF"
-            strokeWidth="4"
-            cx="66.5"
-            cy="66.5"
-            r="54.5"
-          />
+          <circle id="filled-circle" fill="#131316" cx="66.5" cy="66.5" r="54.5" />
+          <circle id="outline" stroke="#FFFFFF" strokeWidth="4" cx="66.5" cy="66.5" r="54.5" />
         </g>
       </svg>
-
-      <h1>Enviando email...</h1>
+      <h1>{statusText}</h1>
     </>
   );
 }
 
-function SuccessSVG() {
+function SuccessSVG({ statusText }) {
   return (
     <>
       <svg
+        data-testid="success-svg"
         width="115px"
         height="115px"
         viewBox="0 0 133 133"
@@ -59,45 +47,22 @@ function SuccessSVG() {
           fill="none"
           fillRule="evenodd"
         >
-          <circle
-            id="filled-circle"
-            fill="#07b481"
-            cx="66.5"
-            cy="66.5"
-            r="54.5"
-          />
-          <circle
-            id="white-circle"
-            fill="#FFFFFF"
-            cx="66.5"
-            cy="66.5"
-            r="55.5"
-          />
-          <circle
-            id="outline"
-            stroke="#07b481"
-            strokeWidth="4"
-            cx="66.5"
-            cy="66.5"
-            r="54.5"
-          />
-          <polyline
-            id="check"
-            stroke="#FFFFFF"
-            strokeWidth="5.5"
-            points="41 70 56 85 92 49"
-          />
+          <circle id="filled-circle" fill="#07b481" cx="66.5" cy="66.5" r="54.5" />
+          <circle id="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5" />
+          <circle id="outline" stroke="#07b481" strokeWidth="4" cx="66.5" cy="66.5" r="54.5" />
+          <polyline id="check" stroke="#FFFFFF" strokeWidth="5.5" points="41 70 56 85 92 49" />
         </g>
       </svg>
-      <h1>Email enviado!</h1>
+      <h1>{statusText}</h1>
     </>
   );
 }
 
-function ErrorSVG() {
+function ErrorSVG({ statusText }) {
   return (
     <>
       <svg
+        data-testid="error-svg"
         width="115px"
         height="115px"
         viewBox="0 0 133 133"
@@ -111,52 +76,33 @@ function ErrorSVG() {
           fill="none"
           fillRule="evenodd"
         >
-          <circle
-            id="filled-circle"
-            fill="#ff0000"
-            cx="66.5"
-            cy="66.5"
-            r="54.5"
-          />
-          <circle
-            id="white-circle"
-            fill="#ff0000"
-            cx="66.5"
-            cy="66.5"
-            r="55.5"
-          />
-          <circle
-            id="outline"
-            stroke="#ff0000"
-            strokeWidth="4"
-            cx="66.5"
-            cy="66.5"
-            r="54.5"
-          />
-          <polyline
-            id="check"
-            stroke="#ff0000"
-            strokeWidth="5.5"
-            points="41 70 56 85 92 49"
-          />
+          <circle id="filled-circle" fill="#ff0000" cx="66.5" cy="66.5" r="54.5" />
+          <circle id="white-circle" fill="#ff0000" cx="66.5" cy="66.5" r="55.5" />
+          <circle id="outline" stroke="#ff0000" strokeWidth="4" cx="66.5" cy="66.5" r="54.5" />
+          <polyline id="check" stroke="#ff0000" strokeWidth="5.5" points="41 70 56 85 92 49" />
         </g>
       </svg>
-
-      <h1>Erro ao enviar email!</h1>
+      <h1>{statusText}</h1>
     </>
   );
 }
 
 function StatusComponent({ status }) {
+  const { t } = useTranslation();
+
+  const errorText = t("contact.statusMessages.error");
+  const successText = t("contact.statusMessages.success");
+  const loadingText = t("contact.statusMessages.isLoading");
+
   return (
     <div id="LOADING-MODAL">
       <span className="loading-svg-status">
         {status === "isLoading" ? (
-          <LoadingSVG />
+          <LoadingSVG statusText={loadingText} />
         ) : status === "success" ? (
-          <SuccessSVG />
+          <SuccessSVG statusText={successText} />
         ) : (
-          <ErrorSVG />
+          <ErrorSVG statusText={errorText} />
         )}
       </span>
     </div>

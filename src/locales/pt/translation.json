@@ -4,11 +4,7 @@
         "aboutUs": "Sobre nós",
         "ourServices": "Nossos serviços",
         "portfolio": "Portfólio",
-        "contact": "Contato",
-        "languageSelector": {
-            "pt": "Português",
-            "en": "English"
-        }
+        "contact": "Contato"
     },
     "header": {
         "heroH4": "Seu projeto <1>está aqui.</1>",
@@ -96,6 +92,11 @@
             "tel": "Por favor, informe um numero válido.",
             "message": "Por favor, escreva sua mensagem.",
             "agree": "Aceite os termos para continuar."
+        },
+        "statusMessages":{
+            "isLoading": "Enviando email...",
+            "success":"Email enviado!",
+            "error": "Erro ao enviar email!"
         }
     }
 }

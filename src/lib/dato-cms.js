@@ -35,8 +35,7 @@ export async function getAllProjects() {
       }
       allProjectArticles{
         id
-            projectUrl
-        latestProject
+        projectUrl
         projectType
         projectTitlePt
         projectTitleEn
